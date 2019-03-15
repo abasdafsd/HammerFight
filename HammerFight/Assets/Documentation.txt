@@ -1,0 +1,13 @@
+урон регулируется в Character > Capsule скрипт DamageReceiver переменная One Hit Damage
+ 
+Здоровье регулируется в Character в переменной Max Health в скрипте Reference Container
+ 
+Сила взмаха крыльев регулируется Character > Capsule в скрипте FlightController переменные Left Force и Right Force
+ 
+чем больше абсолютные значения чем сильнее взмах
+ 
+еще можно регулировать за счет массы ригидбоди
+ 
+можно отдельно регулировать горизонтальную и вертикальную силу
+ 
+скорость молота регулируется в префабе Character > Hammer скрипт Hinge Joint переменная Motor > Target Velocity
