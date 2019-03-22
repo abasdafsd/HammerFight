@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class DamageReceiver : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DamageReceiver : MonoBehaviour
     private float oneHitDamage;
     [SerializeField]
     private float minDamageSpeed;
+    [SerializeField]
+    private GameObject reloadButton;
     // Use this for initialization
     void Start()
     {
@@ -43,7 +46,15 @@ public class DamageReceiver : MonoBehaviour
 
         if (playerInstance.GetHealth() < 0f)
         {
-            PhotonNetwork.Destroy(playerInstance.gameObject);
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        Instantiate(reloadButton);
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.Disconnect();
+        PhotonNetwork.Destroy(playerInstance.gameObject);
     }
 }
