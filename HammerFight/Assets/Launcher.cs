@@ -10,12 +10,15 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField]
     private byte maxPlayersPerRoom = 4;
     string gameVersion = "1";
+    public static Launcher instance;
+    public GameParameters gameParameters;
 
 
     void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         Connect();
+        instance = this;
     }
 
     public void Connect()

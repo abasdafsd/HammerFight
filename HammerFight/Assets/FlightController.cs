@@ -13,14 +13,13 @@ public class FlightController : MonoBehaviour
     private ControlType controlType;
     [SerializeField]
     private Rigidbody rb;
-    [SerializeField]
     private Vector3 leftForce;
-    [SerializeField]
     private Vector3 rightForce;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-
+        leftForce = Launcher.instance.gameParameters.leftForce;
+        rightForce = Launcher.instance.gameParameters.rightForce;
     }
 
     // Update is called once per frame

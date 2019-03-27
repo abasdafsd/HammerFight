@@ -8,16 +8,15 @@ public class DamageReceiver : MonoBehaviour
 {
     [SerializeField]
     private ReferenceContainer playerInstance;
-    [SerializeField]
     private float oneHitDamage;
-    [SerializeField]
     private float minDamageSpeed;
     [SerializeField]
     private GameObject reloadButton;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-
+        oneHitDamage = Launcher.instance.gameParameters.oneHitDamage;
+        minDamageSpeed = Launcher.instance.gameParameters.minDamageSpeed;
     }
 
     // Update is called once per frame
